@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: Arial,Helvetica,sans-serif;
+            background-color:rgb(161, 49, 216);
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        input[typee="number"] {
+            width: 200px;
+            margin: 30px;
+            border-radius: 5px;
+            border: none;
+            background-color: white;
+            box-shadow: 0px 0px 5px rgba(red, green, blue, alpha);
+            font-size: 16px;
+            color: red;
+            margin-top: 5px;
+
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: green;
+        }
+
+        .result {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Temperature Converter</h1>
+
+    <form>
+        <label>Enter Temperature (in celsius): </label><br>
+        <input type="number" id="celsius" placeholder="Enter Temperature in Celsius" required>
+
+        <label>Converted Temperature to fahrenheit: </label><br>
+        <div id="output"></div>
+        <button type="button" onclick="convert()">Convert</button>
+
+    </form>
+
+    <script>
+        function convert() {
+            var celsius = parseFloat(document.getElementById('celsius').value);
+            var fahrenheit = (celsius *1.8) +32; 
+            var kelvin = celsius + 273.15;
+            document.getElementById('output').innerHTML = celsius + " &deg;C =" + fahrenheit.toFixed(2) + "&deg;F"
+            }
+    </script>
+
+    </body>
+    </html>
